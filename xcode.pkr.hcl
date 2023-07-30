@@ -41,13 +41,14 @@ build {
         "xcodes select ${var.xcode_version}",
         "xcodebuild -downloadPlatform ios",
         "xcodebuild -runFirstLaunch",
+        "/usr/sbin/softwareupdate --install-rosetta --agree-to-license",
     ]
   }
 
   provisioner "shell" {
     inline = [
         "source ~/.zprofile",
-        "brew install carthage imagemagick",
+        "brew install carthage",
     ]
   }
 }
