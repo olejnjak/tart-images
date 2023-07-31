@@ -18,6 +18,7 @@ source "tart-cli" "tart" {
   ssh_username = "admin"
   ssh_timeout  = "120s"
   headless     = true
+  disk_size_gb = 50
 }
 
 build {
@@ -38,6 +39,7 @@ build {
         "mint install realm/SwiftLint",
         "ln -s '/Volumes/My Shared Files/ssh' ~/.ssh",
         "xcrun simctl create 'iPhone 13 Pro Max' 'iPhone 13 Pro Max'",
+        "sudo systemsetup -settimezone Europe/Prague",
     ]
   }
 }
