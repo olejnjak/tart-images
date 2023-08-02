@@ -26,13 +26,6 @@ build {
 
   provisioner "shell" {
     inline = [
-      "security unlock-keychain -p admin",
-      "security add-generic-password -a jarvis_login_keychain_password -w admin -s jarvis_login_keychain_password",
-    ]
-  }
-
-  provisioner "shell" {
-    inline = [
         "source ~/.zprofile",
         "curl -Ls https://install.tuist.io | bash",
         "mint install olejnjak/Torino",
